@@ -1,0 +1,6 @@
+Name: Shakhriyor, username: 960217500, д/в: 19/10/2023: 16:52, text: /start
+Name: Shakhriyor, user_id: 960217500, д/в: 19/10/2023: 17:16, text: /start
+Name: Shakhriyor, user_id: 960217500, д/в: 19/10/2023: 17:16, text: /start
+Name: Shakhriyor, user_id: 960217500, д/в: 19/10/2023: 17:17, text: /start
+Name: Shakhriyor, user_id: 960217500, д/в: 20/10/2023: 13:06, text: /start
+Name: Shakhriyor, user_id: 960217500, д/в: 20/10/2023: 13:07, text: /start

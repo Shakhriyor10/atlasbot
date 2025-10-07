@@ -1,0 +1,135 @@
+handlers/basic.py
+
+from aiogram import Bot
+from aiogram.filters import CommandObject
+from aiogram.types import Message
+from core.utils.dbconnect import Request
+
+
+async def add_trigger(message: Message, command: CommandObject, request: Request):
+    name_trigger = command.args.replace(' ', '_')
+    value_trigger = message.reply_to_message.message_id
+    await request.add_trigger(name_trigger, value_trigger)
+    await message.answer(f'Триггер {name_trigger} добавлен')
+    print(message.chat.id)
+
+
+async def get_triggers(message: Message, request: Request):
+    msg = await request.get_triggers()
+    await message.answer(msg, parse_mode="MARKDOWN")
+
+
+async def get_values(message: Message, bot: Bot, request: Request):
+    values = await request.get_values(message.text.replace('#', ''))
+    list_values = values.split('\r\n')
+
+    for value in list_values:
+        await bot.copy_message(message.chat.id, message.chat.id, int(value))
+middlewares/dbmiddleware.py
+
+from typing import Callable, Awaitable, Dict, Any
+import asyncpg
+from aiogram import BaseMiddleware
+from aiogram.types import TelegramObject
+from core.utils.dbconnect import Request
+
+
+class DbSession(BaseMiddleware):
+    def __init__(self, connector: asyncpg.pool.Pool):
+        super().__init__()
+        self.connector = connector
+
+    async def __call__(
+            self,
+            handler: Callable[[TelegramObject, Dict[str, Any]], Awaitable[Any]],
+            event: TelegramObject,
+            data: Dict[str, Any],
+    ) -> Any:
+        async with self.connector.acquire() as connect:
+            data['request'] = Request(connect)
+            return await handler(event, data)
+utils/dbconnect.py
+
+import asyncpg
+from typing import List
+from asyncpg import Record
+
+class Request:
+    def __init__(self, connector: asyncpg.pool.Pool):
+        self.connector = connector
+
+    async def add_trigger(self, name_trigger, value_trigger):
+        query = f"INSERT INTO trigger_table (name_trigger, value_trigger) VALUES ('{name_trigger}', '{value_trigger}') " \
+                f"ON CONFLICT (name_trigger) " \
+                f"DO UPDATE SET value_trigger=trigger_table.value_trigger || '\r\n' || excluded.value_trigger"
+        await self.connector.execute(query)
+
+
+    async def get_triggers(self):
+        query = f"SELECT name_trigger FROM trigger_table ORDER BY name_trigger"
+        result_list: List[Record] = await self.connector.fetch(query)
+        return '\r\n'.join([f"`#{result.get('name_trigger')}`" for result in result_list])
+
+    async def get_values(self, name_trigger):
+        query = f"SELECT value_trigger FROM trigger_table WHERE name_trigger='{name_trigger}'"
+        return await self.connector.fetchval(query)
+main.py
+
+import contextlib
+
+from aiogram import Bot, Dispatcher, F
+import asyncio
+import logging
+
+from aiogram.filters import Command
+
+from core.settings import settings
+
+from core.utils.commands import set_commands
+from core.middlewares.dbmiddleware import DbSession
+import asyncpg
+
+from core.handlers import basic
+asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+
+
+async def start_bot(bot: Bot):
+    await set_commands(bot)
+    await bot.send_message(settings.bots.admin_id, text='Бот запущен!')
+
+
+async def stop_bot(bot: Bot):
+    await bot.send_message(settings.bots.admin_id, text='Бот остановлен!')
+
+
+async def create_pool():
+    return await asyncpg.create_pool(user='postgres', password='qwerty', database='triggerbot',
+                                     host='127.0.0.1', port=5432, command_timeout=60)
+
+
+async def start():
+    logging.basicConfig(level=logging.INFO,
+                        format="%(asctime)s - [%(levelname)s] -  %(name)s - "
+                               "(%(filename)s).%(funcName)s(%(lineno)d) - %(message)s"
+                        )
+
+    bot = Bot(token=settings.bots.bot_token, parse_mode='HTML')
+    pool_connect = await create_pool()
+    dp = Dispatcher()
+    dp.update.middleware.register(DbSession(pool_connect))
+    dp.startup.register(start_bot)
+    dp.shutdown.register(stop_bot)
+
+    dp.message.register(basic.add_trigger, Command(commands='add_trigger', magic=F.args), F.reply_to_message,
+                        F.chat.id == -603194626)
+    dp.message.register(basic.get_triggers, Command(commands='get_triggers'), F.chat.id == -603194626)
+    dp.message.register(basic.get_values, F.chat.id == -603194626, F.text.startswith('#'))
+    try:
+        await dp.start_polling(bot)
+    finally:
+        await bot.session.close()
+
+
+if __name__ == "__main__":
+    with contextlib.suppress(KeyboardInterrupt, SystemExit):
+        asyncio.run(start())

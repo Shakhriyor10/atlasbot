@@ -1,0 +1,563 @@
+# Russian translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-09-09 12:25+0500\n"
+"PO-Revision-Date: 2025-02-21 22:25+0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.0\n"
+
+#: main.py:1047
+msgid ""
+"Привет! Рады видеть вас в нашем боте для отслеживания посылок 📦. "
+"Получайте обновления о статусе ваших отправлений и другие полезные "
+"новости 🗞\n"
+"\n"
+"Выберите, пожалуйста, язык!"
+msgstr ""
+
+#: main.py:1092
+msgid "Пожалуйста, выберите корректное значение"
+msgstr ""
+
+#: main.py:1097 main.py:1124 main.py:1183 main.py:1210
+msgid "Главное меню"
+msgstr ""
+
+#: main.py:1101 main.py:1128 main.py:1187 main.py:1214
+msgid "🔍 Отследить посылку"
+msgstr ""
+
+#: main.py:1102 main.py:1129 main.py:1188 main.py:1215
+msgid "👤 Контакты"
+msgstr ""
+
+#: main.py:1105 main.py:1132 main.py:1191 main.py:1218
+msgid "📃 Тарифы"
+msgstr ""
+
+#: main.py:1106 main.py:1133 main.py:1192 main.py:1219
+msgid "🌐 Сменить язык"
+msgstr ""
+
+#: main.py:1109 main.py:1135 main.py:1195 main.py:1221
+msgid "Информация"
+msgstr ""
+
+#: main.py:1110 main.py:1196
+msgid "Статистика бота"
+msgstr ""
+
+#: main.py:1112 main.py:1136 main.py:1198 main.py:1222
+msgid "Поддержка"
+msgstr ""
+
+#: main.py:1113 main.py:1137 main.py:1199 main.py:1223
+msgid "Соц сети"
+msgstr ""
+
+#: main.py:1115 main.py:1139 main.py:1201 main.py:1225
+msgid "Наш сайт"
+msgstr ""
+
+#: main.py:1161
+msgid "Пожалуйста, введите номер коробки"
+msgstr ""
+
+#: main.py:1163 main.py:2280 main.py:2305 main.py:2364 main.py:2410
+#: main.py:2425 main.py:2481
+msgid "❌ Отмена"
+msgstr ""
+
+#: main.py:1240
+msgid "location"
+msgstr "местоположение"
+
+#: main.py:1241
+msgid "in_driver"
+msgstr "у водителя"
+
+#: main.py:1242
+msgid "in_warehouse"
+msgstr "на складе"
+
+#: main.py:1243
+msgid "packed"
+msgstr "упакован"
+
+#: main.py:1244
+msgid "shipped"
+msgstr "отправлен"
+
+#: main.py:1245
+msgid "departed"
+msgstr "выбыл"
+
+#: main.py:1246
+msgid "in_transit"
+msgstr "в пути"
+
+#: main.py:1247
+msgid "arrived"
+msgstr "прибыл"
+
+#: main.py:1248
+msgid "in_customs"
+msgstr "на таможне"
+
+#: main.py:1249
+msgid "arrive_warehouse"
+msgstr "прибыл на склад"
+
+#: main.py:1250
+msgid "out_location"
+msgstr "вышел из местоположения"
+
+#: main.py:1251
+msgid "accept_location"
+msgstr "принято в местоположение"
+
+#: main.py:1252
+msgid "out_driver"
+msgstr "уехал от водителя"
+
+#: main.py:1253
+msgid "delivered"
+msgstr "доставлено"
+
+#: main.py:1254
+msgid "not_delivered"
+msgstr "не доставлено"
+
+#: main.py:1255
+msgid "refund"
+msgstr "возврат"
+
+#: main.py:1258
+msgid "USA-UZB EXPRESS"
+msgstr "USA-UZB EXPRESS"
+
+#: main.py:1259
+msgid "UZB-USA Express"
+msgstr "UZB-USA Express"
+
+#: main.py:1260
+msgid "USA-UZB STANDARD"
+msgstr "USA-UZB STANDARD"
+
+#: main.py:1261
+msgid "UZB-USA Standard"
+msgstr "UZB-USA Standard"
+
+#: main.py:1262
+msgid "USA-UZB EXPRESS COMMERCIAL"
+msgstr "USA-UZB EXPRESS COMMERCIAL"
+
+#: main.py:1263
+msgid "USA-UZB GROUND"
+msgstr "USA-UZB GROUND"
+
+#: main.py:1264
+msgid "UZB-USA GroundUZ"
+msgstr "UZB-USA GroundUZ"
+
+#: main.py:1287
+msgid "По вашему запросу ничего не найдено"
+msgstr ""
+
+#: main.py:1298 main.py:1321 main.py:1344 main.py:1367 main.py:1390
+#: main.py:1413 main.py:1436 main.py:1459 main.py:1482 main.py:1505
+#: main.py:1528 main.py:1551 main.py:1576 main.py:1599 main.py:1622
+#: main.py:1645 main.py:1670 main.py:1690 main.py:1713 main.py:1736
+#: main.py:1759 main.py:1782 main.py:1805 main.py:1828 main.py:1851
+#: main.py:1874 main.py:1897 main.py:1920 main.py:1943 main.py:1963
+#: main.py:1981
+msgid "Invoice Number: "
+msgstr "Номер коробки: "
+
+#: main.py:1301 main.py:1324 main.py:1347 main.py:1370 main.py:1393
+#: main.py:1416 main.py:1439 main.py:1462 main.py:1485 main.py:1508
+#: main.py:1531 main.py:1554 main.py:1579 main.py:1602 main.py:1625
+#: main.py:1648 main.py:1673 main.py:1693 main.py:1716 main.py:1739
+#: main.py:1762 main.py:1785 main.py:1808 main.py:1831 main.py:1854
+#: main.py:1877 main.py:1900 main.py:1923 main.py:1946 main.py:1966
+msgid "Ваш тариф: "
+msgstr ""
+
+#: main.py:1304 main.py:1327 main.py:1350 main.py:1373 main.py:1396
+#: main.py:1419 main.py:1442 main.py:1465 main.py:1488 main.py:1511
+#: main.py:1534 main.py:1557 main.py:1582 main.py:1605 main.py:1628
+#: main.py:1651 main.py:1676 main.py:1696 main.py:1719 main.py:1742
+#: main.py:1765 main.py:1788 main.py:1811 main.py:1834 main.py:1857
+#: main.py:1880 main.py:1903 main.py:1926 main.py:1949 main.py:1969
+#: main.py:1984
+msgid "Статус"
+msgstr ""
+
+#: main.py:1308 main.py:1331 main.py:1354 main.py:1377 main.py:1400
+#: main.py:1423 main.py:1446 main.py:1469 main.py:1492 main.py:1515
+#: main.py:1538 main.py:1561 main.py:1586 main.py:1609 main.py:1632
+#: main.py:1655 main.py:1680 main.py:1700 main.py:1723 main.py:1746
+#: main.py:1769 main.py:1792 main.py:1815 main.py:1838 main.py:1861
+#: main.py:1884 main.py:1907 main.py:1930 main.py:1953 main.py:1973
+msgid "Текущее местоположение: "
+msgstr "Текущее местоположение📍: "
+
+#: main.py:1311
+msgid "Доставка будет осуществлена в течение 18 дней."
+msgstr ""
+
+#: main.py:1313 main.py:1336 main.py:1359 main.py:1382 main.py:1405
+#: main.py:1428 main.py:1451 main.py:1474 main.py:1497 main.py:1520
+#: main.py:1543 main.py:1591 main.py:1614 main.py:1637 main.py:1705
+#: main.py:1728 main.py:1751 main.py:1774 main.py:1797 main.py:1820
+#: main.py:1843 main.py:1866 main.py:1889 main.py:1912 main.py:1935
+#: main.py:1958
+msgid "Приблизительная дата прибытия"
+msgstr "Приблизительная дата прибытия: "
+
+#: main.py:1334
+msgid "Доставка будет осуществлена в течение 17 дней."
+msgstr ""
+
+#: main.py:1357
+msgid "Доставка будет осуществлена в течение 16 дней."
+msgstr ""
+
+#: main.py:1380
+msgid "Доставка будет осуществлена в течение 15 дней."
+msgstr ""
+
+#: main.py:1403 main.py:1726
+msgid "Доставка будет осуществлена в течение 14 дней."
+msgstr ""
+
+#: main.py:1426 main.py:1749
+msgid "Доставка будет осуществлена в течение 13 дней."
+msgstr ""
+
+#: main.py:1449
+msgid "Доставка будет осуществлена в течение 11 дней."
+msgstr ""
+
+#: main.py:1472
+msgid "Доставка будет осуществлена в течение 9 дней."
+msgstr ""
+
+#: main.py:1495
+msgid "Доставка будет осуществлена в течение 7 дней."
+msgstr ""
+
+#: main.py:1518 main.py:1612 main.py:1841
+msgid "Доставка будет осуществлена в течение 5 дней."
+msgstr ""
+
+#: main.py:1541 main.py:1635 main.py:1864
+msgid "Доставка будет осуществлена в течение 4 дней."
+msgstr ""
+
+#: main.py:1566 main.py:1660
+msgid "Тел номер: "
+msgstr "Тел: "
+
+#: main.py:1569 main.py:1663 main.py:1683 main.py:1887
+msgid "Доставка будет осуществлена в течение 3 дней."
+msgstr ""
+
+#: main.py:1589 main.py:1703
+msgid "Доставка будет осуществлена в течение дня."
+msgstr ""
+
+#: main.py:1772
+msgid "Доставка будет осуществлена в течение 12 дней."
+msgstr ""
+
+#: main.py:1795
+msgid "Доставка будет осуществлена в течение 10 дней."
+msgstr ""
+
+#: main.py:1818
+msgid "Доставка будет осуществлена в течение 8 дней."
+msgstr ""
+
+#: main.py:1910
+msgid "Доставка будет осуществлена в течение 2 дней."
+msgstr ""
+
+#: main.py:1933
+msgid "Готовы к получению и отправке в другие штаты."
+msgstr ""
+
+#: main.py:1956
+msgid "Доставка будет осуществлена в течение дня"
+msgstr ""
+
+#: main.py:1976
+msgid "Доставлено: "
+msgstr ""
+
+#: main.py:2065
+msgid "<b>🗾 Выберите государство:</b>"
+msgstr ""
+
+#: main.py:2120
+msgid "Назад"
+msgstr ""
+
+#: main.py:2124
+msgid "<b>🌇 Выберите город:</b>"
+msgstr ""
+
+#: main.py:2142
+msgid "Ошибка: в этом городе нет данных о улицах."
+msgstr ""
+
+#: main.py:2156
+msgid "Нет номеров"
+msgstr ""
+
+#: main.py:2160
+msgid "Местоположение"
+msgstr ""
+
+#: main.py:2269
+msgid "sel_traffic"
+msgstr "Выберите страну отправителя"
+
+#: main.py:2273
+msgid "send-us"
+msgstr "🇺🇸США →"
+
+#: main.py:2274
+msgid "send-uz"
+msgstr "🇺🇿УЗБ →"
+
+#: main.py:2277
+msgid "send-canada"
+msgstr "🇨🇦Канада →"
+
+#: main.py:2299 main.py:2359 main.py:2404 main.py:2420
+msgid "sel_rec_coun"
+msgstr "Выберите страну получателя"
+
+#: main.py:2302
+msgid "send-us_rec-uz"
+msgstr "→ 🇺🇿УЗБ"
+
+#: main.py:2303
+msgid "send-us_rec-tjk"
+msgstr "→ 🇹🇯ТЖК"
+
+#: main.py:2304 main.py:2363 main.py:2409 main.py:2424
+msgid "trf-oth-cn"
+msgstr "Другие страны"
+
+#: main.py:2324
+msgid "Наши социальные сети"
+msgstr ""
+
+#: main.py:2329
+msgid "🇺🇸США → 🇺🇿УЗБ"
+msgstr ""
+
+#: main.py:2330 main.py:2373 main.py:2434 main.py:2444 main.py:2454
+msgid "Стандарт"
+msgstr ""
+
+#: main.py:2331
+msgid "Цена стандарт США-Узб"
+msgstr "Цена: 7.5$ за 1кг (Минимум 3кг)"
+
+#: main.py:2332
+msgid "Стандарт Сша-Узб Доставка"
+msgstr "Доставка в течении: 5-15 рабочих дней"
+
+#: main.py:2333 main.py:2375
+msgid "Экспресс"
+msgstr ""
+
+#: main.py:2334
+msgid "Цена экспресс сша-узб"
+msgstr "Цена: 15$ за 1кг (Минимум: 1кг)"
+
+#: main.py:2335
+msgid "Доставка экспресс сша-узб"
+msgstr "Доставка в течении: 2-5 рабочих дней"
+
+#: main.py:2336
+msgid "экс-ком"
+msgstr "Экспресс коммерчиский"
+
+#: main.py:2337
+msgid "экс-ком-цен"
+msgstr "Цена: 18$+ за 1кг"
+
+#: main.py:2338
+msgid "экс-ком-дост"
+msgstr "Доставка в течении: 1-3 рабочих дней"
+
+#: main.py:2339 main.py:2380
+msgid "Ground"
+msgstr "Эконом"
+
+#: main.py:2340
+msgid "Цена эконом сша-узб"
+msgstr "Цена: 5.55$ за 1кг (Минимум: 10кг)"
+
+#: main.py:2341
+msgid "Доставка эконом сша-узб"
+msgstr "Доставка в течении: 15-25 рабочих дней"
+
+#: main.py:2362
+msgid "send-uz_rec-us"
+msgstr "→ 🇺🇸США"
+
+#: main.py:2374
+msgid "Доставка Узб-Сша Стандарт"
+msgstr "Доставка в течении: 5-15 рабочих дней"
+
+#: main.py:2376
+msgid "Цена экспресс Узб-Сша"
+msgstr "Цена: 15$ за 1кг (Минимум: 1кг)"
+
+#: main.py:2377
+msgid "Доставка экспресс Узб-Сша"
+msgstr "Доставка в течении: 2-5 рабочих дней"
+
+#: main.py:2378
+msgid "🇺🇿УЗБ → 🇺🇸США"
+msgstr ""
+
+#: main.py:2379
+msgid "price_uz_standart"
+msgstr "Цена: 12$ за 1кг (Минимум: 3кг)"
+
+#: main.py:2381
+msgid "Эконом Узб-Сша"
+msgstr "Цена: 8.79$ за 1кг (Минимум: 22кг)"
+
+#: main.py:2382
+msgid "Доставка эконом узб-сша"
+msgstr "Доставка в течении: 15-25 рабочих дней"
+
+#: main.py:2407
+msgid "send-canada-accept-uz"
+msgstr "→🇺🇿УЗБ"
+
+#: main.py:2408
+msgid "send-canada-accept-tj"
+msgstr "→🇹🇯ТЖК"
+
+#: main.py:2423
+msgid "send-tjk-accept-usa"
+msgstr "→ 🇺🇸США"
+
+#: main.py:2433
+msgid "🇨🇦Канада → 🇺🇿УЗБ"
+msgstr ""
+
+#: main.py:2435
+msgid "Цена стандарт Канада-Узб"
+msgstr "Цена: 13$ канадских  за 1кг (Минимум 5кг)"
+
+#: main.py:2436
+msgid "Стандарт Канада-Узб Доставка"
+msgstr "Доставка в течении: 5-15 рабочих дней"
+
+#: main.py:2443
+msgid "🇺🇸США → 🇹🇯ТЖК"
+msgstr ""
+
+#: main.py:2445
+msgid "Цена стандарт США-ТЖК"
+msgstr "Цена: 16.49$ за 1кг (Минимум 3кг)"
+
+#: main.py:2446
+msgid "Стандарт США-ТЖК Доставка"
+msgstr "Доставка в течении: 5-15 рабочих дней"
+
+#: main.py:2453
+msgid "🇨🇦Канада → 🇹🇯ТЖК"
+msgstr ""
+
+#: main.py:2455
+msgid "Цена стандарт Канада-ТЖК"
+msgstr "Цена: 16.49$ за 1кг (Минимум 3кг)"
+
+#: main.py:2456
+msgid "Стандарт Канада-ТЖК Доставка"
+msgstr "Доставка в течении: 5-15 рабочих дней"
+
+#: main.py:2463
+msgid "Следите за новостями скоро будут и в других странах"
+msgstr ""
+
+#: main.py:2479
+msgid "Пожалуйста, напишите ваше сообщение!"
+msgstr ""
+
+#: main.py:2497
+msgid "Ваше сообщение передано, ждите ответ от службы поддержки клиентов!"
+msgstr ""
+
+#: main.py:2510
+msgid "Сообщение от поддержки!"
+msgstr ""
+
+#~ msgid "<b>🗾Выберите государство!</b>"
+#~ msgstr ""
+
+#~ msgid "<b>Выберите город:</b>"
+#~ msgstr ""
+
+#~ msgid "Доставка Узб-Сша(стандарт)"
+#~ msgstr ""
+
+#~ msgid "Стандарт Сша-Узб Цена"
+#~ msgstr ""
+
+#~ msgid "Доставка в течении: 5-10 рабочих дней"
+#~ msgstr "Доставка в течении: 15-25 рабочих дней"
+
+#~ msgid "pr_gr_uz"
+#~ msgstr "Цена: 8.79$+ за 1кг"
+
+#~ msgid "Цена: 7.5$ за 1кг"
+#~ msgstr ""
+
+#~ msgid "Цена2"
+#~ msgstr "Цена: 15$ за 1кг"
+
+#~ msgid "Доставка1-3"
+#~ msgstr "Доставка в течении: 2-5 рабочих дней"
+
+#~ msgid "ground_price"
+#~ msgstr "Цена: 5.05$ + за 1кг"
+
+#~ msgid "gr_del"
+#~ msgstr "Доставка в течении: 15-25 рабочих дней"
+
+#~ msgid "gr_delive"
+#~ msgstr "Доставка в течении: 5-15 рабочих дней"
+
+#~ msgid "🇺🇸Канада → 🇹🇯ТЖК"
+#~ msgstr ""
+
+#~ msgid "send-tjk"
+#~ msgstr "🇹🇯ТЖК →"
+
+#~ msgid "Пожалуйста, введите ID посылки"
+#~ msgstr ""
+
