@@ -177,7 +177,6 @@ semaphore = asyncio.Semaphore(25)
 
 
 async def send_broadcast(
-    session,
     admin_id,
     message="",
     state=None,
@@ -189,8 +188,17 @@ async def send_broadcast(
     if state:
         await state.clear()
 
-    request = Request(session)
-    users = await request.get_active_users()
+    async def fetch_active_users():
+        async with session_maker() as fetch_session:
+            request = Request(fetch_session)
+            return await request.get_active_users()
+
+    async def disable_user_in_db(user_id: int):
+        async with session_maker() as disable_session:
+            request = Request(disable_session)
+            await request.disable_user(user_id)
+
+    users = await fetch_active_users()
 
     # Статистика выполнения
     stats = {"sent": 0, "blocked": 0, "failed": 0, "total": len(users)}
@@ -252,7 +260,7 @@ async def send_broadcast(
                     return
 
             except TelegramForbiddenError:
-                await request.disable_user(user_id)
+                await disable_user_in_db(user_id)
                 stats["blocked"] += 1
                 await update_progress()
                 return
@@ -380,15 +388,13 @@ async def process_broadcast(message: Message, session: AsyncSession, state: FSMC
 @dp.callback_query(
     lambda c: c.data == "confirm_broadcast", BroadcastState.waiting_confirmation
 )
-async def confirm_broadcast(
-    callback: CallbackQuery, session: AsyncSession, state: FSMContext
-):
+async def confirm_broadcast(callback: CallbackQuery, state: FSMContext):
     """Подтверждение и запуск рассылки"""
     data = await state.get_data()
     admin_id = data["admin_id"]
 
     # Запускаем рассылку в фоне
-    task = asyncio.create_task(broadcast_task(data=data, session=session, state=state))
+    task = asyncio.create_task(broadcast_task(data=data, state=state))
 
     # Сохраняем task в состояние для возможной отмены в будущем
     await state.update_data(broadcast_task=task)
@@ -404,7 +410,7 @@ async def confirm_broadcast(
     await state.set_state(BroadcastState.broadcasting)
 
 
-async def broadcast_task(data: dict, session: AsyncSession, state: FSMContext):
+async def broadcast_task(data: dict, state: FSMContext):
     """Фоновая задача для рассылки"""
     admin_id = data["admin_id"]
     has_photo = data["has_photo"]
@@ -412,16 +418,13 @@ async def broadcast_task(data: dict, session: AsyncSession, state: FSMContext):
     try:
         if has_photo:
             result = await send_broadcast(
-                session=session,
                 admin_id=admin_id,
                 content_type="photo",
                 photo=data["photo_id"],
                 photo_caption=data["caption"],
             )
         else:
-            result = await send_broadcast(
-                session=session, admin_id=admin_id, message=data["text"]
-            )
+            result = await send_broadcast(admin_id=admin_id, message=data["text"])
 
     except asyncio.CancelledError:
         await bot.send_message(admin_id, "❌ Рассылка была отменена")
